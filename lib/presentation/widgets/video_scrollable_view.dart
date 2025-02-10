@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tok_tik_app/domain/entities/video_post.dart';
+import 'package:tok_tik_app/presentation/widgets/fullscreen_player.dart';
 import 'package:tok_tik_app/presentation/widgets/video_buttons.dart';
 
 class VideoScrollableView extends StatelessWidget {
@@ -17,6 +18,11 @@ class VideoScrollableView extends StatelessWidget {
         final VideoPost videoPost = videos[index];
         return Stack(
           children:[
+            //Video Player + gradient
+            SizedBox.expand(
+              child: FullScreenPlayer(caption: videoPost.caption, videoUrl: videoPost.videoUrl)
+            ),
+            //Buttons
             Positioned(
               bottom: 40,
               right: 20,
