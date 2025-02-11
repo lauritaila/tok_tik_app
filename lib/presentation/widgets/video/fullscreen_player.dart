@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tok_tik_app/presentation/widgets/video_background.dart';
+import 'package:tok_tik_app/presentation/widgets/video/video_background.dart';
 import 'package:video_player/video_player.dart';
 
 class FullScreenPlayer extends StatefulWidget {
@@ -53,15 +53,18 @@ class _FullScreenPlayerState extends State<FullScreenPlayer> {
               child: Stack(children: [
                 //Video
                 VideoPlayer(controller),
+                
                 //gradient
                 VideoBackground(
                   stops: [0.8, 1.0],
                 ),
+
                 //caption
                 Positioned(
                     bottom: 20,
                     right: 20,
-                    child: _VideoCaption(caption: widget.caption))
+                    child: _VideoCaption(caption: widget.caption)
+                )
               ]),
             ),
           );
