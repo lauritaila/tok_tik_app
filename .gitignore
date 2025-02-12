@@ -12,6 +12,7 @@
 .swiftpm/
 migrate_working_dir/
 /assets/videos/
+!/assets/videos/.gitkeep
 
 # IntelliJ related
 *.iml
