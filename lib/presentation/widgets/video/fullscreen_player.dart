@@ -61,8 +61,8 @@ class _FullScreenPlayerState extends State<FullScreenPlayer> {
 
                 //caption
                 Positioned(
-                    bottom: 20,
-                    right: 20,
+                    bottom: 50,
+                    left: 30,
                     child: _VideoCaption(caption: widget.caption)
                 )
               ]),
@@ -82,13 +82,13 @@ class _VideoCaption extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    final tileStyle = Theme.of(context).textTheme.titleLarge!;
+    final tileStyle = Theme.of(context).textTheme.titleMedium!;
     return SizedBox(
-      width: size.width * 0.6,
+      width: size.width * 0.60,
       child: Text(
         caption,
         maxLines: 2,
-        style: tileStyle,
+        style: tileStyle.copyWith(color: Colors.grey[300], fontWeight: FontWeight.normal),
       )
     );
   }
